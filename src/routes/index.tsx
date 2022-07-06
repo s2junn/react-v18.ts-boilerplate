@@ -3,10 +3,10 @@ import type { RouteObject } from 'react-router-dom';
 import { Routes, Route, useRoutes } from 'react-router-dom';
 
 // import Layout from '@/components/layout/layout'
-import Layout from '../components/layout/layout'
+import Layout from '../components/layout'
 import Root from '../pages';
-import Home from '../pages/home/home'
-import About from '../pages/about/about'
+import Home from '../pages/home'
+import About from '../pages/about'
 
 type BSLRouterProps = {
 	children?: React.ReactNode;

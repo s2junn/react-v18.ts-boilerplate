@@ -1,6 +1,9 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { Outlet } from "react-router-dom";
+
+import Navigation from '../navigation';
+
 import './layout.scss';
 
 type LayoutProps = {
@@ -28,13 +31,10 @@ function Layout ( props: LayoutProps = {} ) {
     }
   }, [ variable ]);
 
-  function handleEvents() {
-    //TODO: to do something
-  }
-
   return (
     <div className={`layout ${props.classNames || ''}`}>
       { message }
+      <Navigation />
       <Outlet />
     </div>
   );

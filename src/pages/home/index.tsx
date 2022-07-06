@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 import './home.scss';
 
@@ -12,8 +11,6 @@ type HomeProps = {
 function Home ( props: HomeProps = {} ) {
   const [message, setMessage] = useState( 'Hello, Home!' );
   const [variable, setVariable] = useState('Test Variable');
-
-  const navigate = useNavigate()
 
   useEffect( () => {
     //TODO: componentDidMount
@@ -29,28 +26,10 @@ function Home ( props: HomeProps = {} ) {
     }
   }, [ variable ]);
 
-  function handleEvents(e: React.MouseEvent<HTMLButtonElement>) {
-		switch(e.target.value) {
-      case 'root':
-				navigate('/')
-				break;
-			case 'home':
-				navigate('/home')
-				break;
-			case 'about':
-				navigate('/about')
-				break;
-			default:
-		}
-	}
-
   return (
     <div className={`home ${props.classNames || ''}`}>
       { message }
       { props.children }
-      <button value="root" onClick={handleEvents}>root</button>
-			<button value="home" onClick={handleEvents}>home</button>
-			<button value="about" onClick={handleEvents}>about</button>
     </div>
   );
 };

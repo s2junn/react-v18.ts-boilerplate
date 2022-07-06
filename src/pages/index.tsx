@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 
 // import './{{kebab name}}.scss';
 
@@ -12,8 +11,6 @@ type RootProps = {
 function Root(props: RootProps = {}) {
 	const [message, setMessage] = useState('Hello, Root!');
 	const [variable, setVariable] = useState('Test Variable');
-
-	const navigate = useNavigate()
 
 	useEffect(() => {
 		//TODO: componentDidMount
@@ -29,25 +26,10 @@ function Root(props: RootProps = {}) {
 		};
 	}, [variable]);
 
-	function handleEvents(e: React.MouseEvent<HTMLButtonElement>) {
-		switch(e.target.value) {
-			case 'home':
-				navigate('/home')
-				break;
-			case 'about':
-				navigate('/about')
-				break;
-			default:
-		}
-	}
-
 	return (
 		<div className={`root-element ${props.classNames || ''}`}>
-			{message}
+			{message}<br />
 			{props.children}
-			<button value="root" onClick={handleEvents}>root</button>
-			<button value="home" onClick={handleEvents}>home</button>
-			<button value="about" onClick={handleEvents}>about</button>
 		</div>
 	);
 }
