@@ -3,7 +3,6 @@ const webpack = require('webpack');
 const InterpolateHtmlPlugin = require('interpolate-html-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 // const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 
 module.exports = {
@@ -37,7 +36,6 @@ module.exports = {
 				{ from: 'public/favicon.ico', to: 'favicon.ico' },
 			],
 		}),
-		new CleanWebpackPlugin(),
 		new webpack.ProvidePlugin({
 			React: 'react',
 		}),
