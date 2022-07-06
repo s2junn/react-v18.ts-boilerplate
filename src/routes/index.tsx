@@ -1,5 +1,6 @@
 import * as React from 'react';
-import { Routes, Route } from 'react-router-dom';
+import type { RouteObject } from 'react-router-dom';
+import { Routes, Route, useRoutes } from 'react-router-dom';
 
 // import Layout from '@/components/layout/layout'
 import Layout from '../components/layout/layout'
@@ -13,15 +14,19 @@ type BSLRouterProps = {
 };
 
 function BSLRouter(props: BSLRouterProps = {}) {
-	return (
-		<Routes>
-			<Route path="/" element={ <Layout /> }>
-				<Route index element={ <Root /> } />
-				<Route path="/home" element={ <Home /> } />
-				<Route path="/about" element={ <About /> } />
-			</Route>
-		</Routes>
-	);
+	const routes: RouteObject[] = [
+		{
+			path: '/',
+			element: <Layout />,
+			children: [
+				{ index: true, element: <Root /> },
+				{ path: '/home', element: <Home /> },
+				{ path: '/about', element: <About /> },
+			]
+		}
+	]
+
+	return useRoutes(routes)
 }
 
 BSLRouter.defaultProps = {};

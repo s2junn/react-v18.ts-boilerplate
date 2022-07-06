@@ -3,7 +3,6 @@ const { merge } = require("webpack-merge");
 const TerserPlugin = require("terser-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const CssMinimizerPlugin = require("css-minimizer-webpack-plugin");
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 const common = require("./webpack.common");
 
@@ -30,14 +29,6 @@ module.exports = merge(common, {
   },
   plugins: [
     new MiniCssExtractPlugin(),
-    new CleanWebpackPlugin({
-      dry: false,
-      verbose: true,
-      cleanOnceBeforeBuildPatterns: [
-        '**/*',
-        path.resolve(process.cwd(), 'dist/**/*')
-      ]
-    })
   ],
   optimization: {
     usedExports: true,
