@@ -18,6 +18,11 @@ React v18 에서는 다음과 같은 기능이 추가되었다.
   - useDeferredValue
   - useInsertionEffect
 
+> References:
+>
+> - <https://reactjs.org/>
+> - <https://ko.reactjs.org/docs/hello-world.html>
+
 ## <br />
 
 # **React**
@@ -52,6 +57,16 @@ React v18 에서는 다음과 같은 기능이 추가되었다.
   - webpack config 객체를 병합하기 위해 사용하는 모듈로 stage 별 config 설정을 따로 셋팅하기위해 사용
 - webpack-bundle-analyzer
   - 번들링된 chunk 의 사이즈를 도식화하여 확인시켜주는 모듈
+
+> References:
+>
+> - <https://webpack.js.org/configuration/>
+> - <https://velog.io/@rickyhj1994/Webpack-%ED%8C%8C%ED%97%A4%EC%B9%98%EA%B8%B0-4-Plugin>
+> - <https://blog.naver.com/thdbsgh3443/222034686070>
+> - <https://triplexlab.gitbook.io/webpack/webpack-webpack>
+> - <https://yamoo9.gitbook.io/webpack/>
+> - <https://syaku.tistory.com/365>
+> - <https://studyingych.tistory.com/50>
 
 ## <br />
 
@@ -94,12 +109,19 @@ ES6 이상으로 작성된 코드를 ES5 버전으로 변환(브라우저 호환
 }
 ```
 
+> References:
+>
+> - <https://blog.cometkim.kr/posts/start-modern-javascript-with-babel/>
+> - <https://tech.kakao.com/2020/12/01/frontend-growth-02/>
+> - <https://blinders.tistory.com/95>
+
 ## <br />
 
 # Typescript
 
 ```
-> yarn add -D typescript @types/node @types/react @types/react-dom @babel/preset-typescript
+> yarn add -D typescript ts-node @types/node @types/react @types/react-dom @babel/preset-typescript
+> tsc --init
 ```
 
 - typescript
@@ -107,6 +129,11 @@ ES6 이상으로 작성된 코드를 ES5 버전으로 변환(브라우저 호환
 - @types/react
 - @types/react-dom
 - @babel/preset-typescript
+
+> References:
+>
+> - <https://smoh.tistory.com/323?category=880444>
+> - <https://react.vlpt.us/using-typescript/>
 
 ## <br />
 
@@ -135,6 +162,10 @@ or
   - Typescript 문법에 대해 Check 할 수 있도록 Rule 정의
 - @typescript-eslint/parser
 
+> References:
+>
+> - <https://tech.kakao.com/2019/12/05/make-better-use-of-eslint/>
+
 ## <br />
 
 # Prettier(Formatter)
@@ -150,6 +181,10 @@ Formatting Rules 를 검사하여 일관된 코드를 작성할 수 있도록 �
   - ESLint 와 Prettier 의 규칙 충돌을 방지해주는 모듈
 - eslint-plugin-prettier
 
+> References:
+>
+> - <https://hj-blog.github.io/frontend/Prettier/>
+
 ## <br />
 
 # React Router
@@ -157,6 +192,11 @@ Formatting Rules 를 검사하여 일관된 코드를 작성할 수 있도록 �
 ```
 > yarn add react-router-dom
 ```
+
+> References:
+>
+> - <https://reactrouter.com/docs/en/v6/getting-started/overview>
+> - <https://velog.io/@yiyb0603/React-Router-dom%EC%9D%98-%EC%9C%A0%EC%9A%A9%ED%95%9C-hooks%EB%93%A4>
 
 ## <br />
 
