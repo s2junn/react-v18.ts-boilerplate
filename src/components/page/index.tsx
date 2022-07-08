@@ -1,13 +1,13 @@
 import React from 'react';
 
-import { Header } from '../header';
+import { Header } from '../';
 import './page.scss';
 
 type User = {
   name: string;
 };
 
-export const Page: React.VFC = () => {
+function Page() {
   const [user, setUser] = React.useState<User>();
 
   return (
@@ -70,4 +70,6 @@ export const Page: React.VFC = () => {
       </section>
     </article>
   );
-};
+}
+
+export default React.memo( Page )

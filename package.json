@@ -27,6 +27,8 @@
     ]
   },
   "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.3.0"
@@ -81,6 +83,12 @@
     "webpack-dev-server": "^4.9.3",
     "webpack-manifest-plugin": "^5.0.0",
     "webpack-merge": "^5.8.0"
+  },
+  "peerDependencies": {
+    "@emotion/react": ">=11.9.3",
+    "@emotion/styled": ">=11.9.3",
+    "react": ">=18.2.0",
+    "react-dom": ">=18.2.0"
   },
   "production": [
     ">0.2%",
