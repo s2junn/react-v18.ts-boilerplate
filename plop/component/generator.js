@@ -40,7 +40,7 @@ module.exports = {
         type: 'add',
         path: `${uri.path}/${dashCase(uri.name)}/index.tsx`,
         templateFile: './plop/component/templates/ReactFunctionComponent.tsx.hbs',
-        ComponentName: uri.name,
+        data: { ComponentName: uri.name },
       },
     ]
 
