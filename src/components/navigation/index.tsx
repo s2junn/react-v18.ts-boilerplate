@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import './navigation.scss';
+import styled from '@emotion/styled'
 
 type NavigationProps = {
   children?: React.ReactNode;
@@ -45,16 +45,22 @@ function Navigation ( props: NavigationProps = {} ) {
 	}
 
   return (
-    <div className={`navigation ${props.classNames || ''}`}>
+    <StyledNavigation className={['navigation', props.classNames || ''].join(' ')}>
       { message }<br />
       { props.children }
       <button value="root" onClick={handleEvents}>root</button>
 			<button value="home" onClick={handleEvents}>home</button>
 			<button value="about" onClick={handleEvents}>about</button>
-    </div>
+    </StyledNavigation>
   );
 };
 
 Navigation.defaultProps = {};
 
 export default React.memo( Navigation );
+
+const StyledNavigation = styled.div`
+&.navigation {
+
+}
+`

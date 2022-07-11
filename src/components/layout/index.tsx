@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 import Navigation from '../navigation';
 
-import './layout.scss';
+import styled from '@emotion/styled'
 
 type LayoutProps = {
   children?: React.ReactNode;
@@ -32,14 +32,20 @@ function Layout ( props: LayoutProps = {} ) {
   }, [ variable ]);
 
   return (
-    <div className={`layout ${props.classNames || ''}`}>
+    <StyledLayout className={`layout ${props.classNames || ''}`}>
       { message }
       <Navigation />
       <Outlet />
-    </div>
+    </StyledLayout>
   );
 };
 
 Layout.defaultProps = {};
 
 export default React.memo( Layout );
+
+const StyledLayout = styled.div`
+&.layout {
+
+}
+`

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
-import './home.scss';
+import styled from '@emotion/styled'
 
 type HomeProps = {
   children?: React.ReactNode;
@@ -27,13 +27,19 @@ function Home ( props: HomeProps = {} ) {
   }, [ variable ]);
 
   return (
-    <div className={`home ${props.classNames || ''}`}>
+    <StyledHome className={`home ${props.classNames || ''}`}>
       { message }
       { props.children }
-    </div>
+    </StyledHome>
   );
 };
 
 Home.defaultProps = {};
 
 export default React.memo( Home );
+
+const StyledHome = styled.div`
+&.home {
+
+}
+`

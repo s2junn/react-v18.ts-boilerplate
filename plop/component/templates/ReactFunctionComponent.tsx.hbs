@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
-import './{{ dashCase name }}.scss';
+import styled from '@emotion/styled'
 
 type {{ properCase name }}Props = {
     children?: React.ReactNode;
@@ -31,14 +31,20 @@ function {{ properCase name }} ( props: {{ properCase name }}Props = {} ) {
     }
 
     return (
-        <div className={`{{ dashCase name }} ${props.classNames || ''}`}>
+        <Styled{{ properCase name }} className={['{{ dashCase name }}', props.classNames || ''].join(' ')}>
             { message }<br />
             { props.children }
             <button onClick={ handleEvents }>button</button>
-        </div>
+        </Styled{{ properCase name }}>
     );
 };
 
 {{ properCase name }}.defaultProps = {};
 
-export default React.memo( {{ properCase name }} );
+export default React.memo( {{ properCase name }} )
+
+const Styled{{ properCase name }} = styled.div`
+&.{{ dashCase name }} {
+
+}
+`

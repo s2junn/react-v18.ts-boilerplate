@@ -13,11 +13,6 @@ module.exports = {
                 type: "add",
                 path: "{{ dashCase name }}/index.tsx",
                 templateFile: "./plop/component/templates/ReactFunctionComponent.tsx.hbs"
-            },
-            {
-                type: "add",
-                path: "{{ dashCase name }}/{{ dashCase name }}.scss",
-                templateFile: "./plop/component/templates/ReactFunctionComponent.scss.hbs"
             }
         ]
 

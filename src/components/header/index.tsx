@@ -1,7 +1,7 @@
 import React from 'react';
 
 import Button from '../button';
-import './header.scss';
+import styled from '@emotion/styled'
 
 type User = {
   name: string;
@@ -16,7 +16,7 @@ interface HeaderProps {
 
 function Header ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) { 
   return (
-    <header>
+    <StyledHeader>
       <div className="wrapper">
         <div>
           <svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
@@ -53,8 +53,43 @@ function Header ({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) {
           )}
         </div>
       </div>
-    </header>
+    </StyledHeader>
   )
 }
 
 export default React.memo( Header )
+
+const StyledHeader = styled.header`
+.wrapper {
+  font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  svg {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  h1 {
+    font-weight: 900;
+    font-size: 20px;
+    line-height: 1;
+    margin: 6px 0 6px 10px;
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  .welcome {
+    color: #333;
+    font-size: 14px;
+    margin-right: 10px;
+  }
+  
+  button + button {
+    margin-left: 10px;
+  }
+}
+`
