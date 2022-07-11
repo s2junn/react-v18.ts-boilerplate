@@ -36,7 +36,7 @@ React v18 에서는 다음과 같은 기능이 추가되었다.
 # Webpack(Bundler)
 
 ```
-> yarn add -D webpack webpack-cli webpack-dev-server html-webpack-plugin copy-webpack-plugin clean-webpack-plugin webpack-manifest-plugin webpack-merge webpack-bundle-analyzer
+> yarn add -D webpack webpack-cli webpack-dev-server html-webpack-plugin copy-webpack-plugin webpack-manifest-plugin webpack-merge webpack-bundle-analyzer
 ```
 
 - webpack
@@ -49,8 +49,6 @@ React v18 에서는 다음과 같은 기능이 추가되었다.
   - 최초 실행될 HTML 파일에 번들링된 파일을 연결해주는 모듈
 - copy-webpack-plugin
   - static files 를 빌드 산출물에 복사해주는 모듈
-- clean-webpack-plugin
-  - 번들링된 파일을 정리하여 빌드시 충돌을 최소화해주는 모듈
 - webpack-manifest-plugin
   - webpack 으로 번들링된 파일명을 최종 산출물인 HTML 에서 사용할 수 있도록 alias 같은 형태로 관리해주는 manifest.json 파일 생성 모듈
 - webpack-merge
