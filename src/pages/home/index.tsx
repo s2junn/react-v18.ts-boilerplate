@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 
 type HomeProps = {
   children?: React.ReactNode
-  classNames?: string
+  className?: string
 }
 
 function Home(props: HomeProps = {}) {
@@ -27,7 +27,7 @@ function Home(props: HomeProps = {}) {
   }, [variable])
 
   return (
-    <StyledHome className={`home ${props.classNames || ''}`}>
+    <StyledHome className={`home ${props.className || ''}`}>
       {message}
       {props.children}
     </StyledHome>

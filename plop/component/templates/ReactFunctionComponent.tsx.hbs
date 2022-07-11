@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 
 type {{ properCase ComponentName }}Props = {
     children?: React.ReactNode
-    classNames?: string
+    className?: string
 }
 
 function {{ properCase ComponentName }}(props: {{ properCase ComponentName }}Props = {}) {
@@ -31,7 +31,7 @@ function {{ properCase ComponentName }}(props: {{ properCase ComponentName }}Pro
     }
 
     return (
-        <Styled{{ properCase ComponentName }} className={['{{ dashCase ComponentName }}', props.classNames || ''].join(' ')}>
+        <Styled{{ properCase ComponentName }} className={['{{ dashCase ComponentName }}', props.className || ''].join(' ')}>
             { message }<br />
             { props.children }
             <button onClick={ handleEvents }>button</button>
