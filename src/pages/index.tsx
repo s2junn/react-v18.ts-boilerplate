@@ -1,5 +1,6 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 // import './{{kebab name}}.scss';
 
@@ -12,8 +13,12 @@ function Root(props: RootProps = {}) {
 	const [message, setMessage] = useState('Hello, Root!');
 	const [variable, setVariable] = useState('Test Variable');
 
+	const navigate = useNavigate()
+
 	useEffect(() => {
 		//TODO: componentDidMount
+		// navigate('/home')
+
 		return () => {
 			//TODO: componentWillUnmount
 		};

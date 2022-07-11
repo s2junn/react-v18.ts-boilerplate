@@ -246,3 +246,25 @@ CSS-in-JS 라이브러리들 중에서 SSR 설정이 따로 필요하지 않고,
 ```
 > npx -p @storybook/cli sb init
 ```
+
+## <br />
+
+# Recoil
+
+```
+> yarn add recoil
+```
+
+> References
+>
+> - <https://velog.io/@juno7803/Recoil-Recoil-200-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0>
+
+## <br />
+
+# React Query
+
+> References
+>
+> - <https://velog.io/@jiseong/React-Query-Recoil-%EC%A0%81%EC%9A%A9%EA%B8%B01>
+> - <https://velog.io/@jiseong/React-Query-Recoil-%EC%A0%81%EC%9A%A9%EA%B8%B02>
+> <https://velog.io/@jiseong/react-query-%EC%97%90%EB%9F%AC-%ED%95%B8%EB%93%A4%EB%A7%81>
