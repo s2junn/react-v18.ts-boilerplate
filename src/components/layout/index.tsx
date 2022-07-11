@@ -1,45 +1,45 @@
-import * as React from 'react';
-import { useState, useEffect } from 'react';
-import { Outlet } from "react-router-dom";
+import * as React from 'react'
+import { useState, useEffect } from 'react'
+import { Outlet } from 'react-router-dom'
 
-import Navigation from '../navigation';
+import Navigation from '../navigation'
 
-import './layout.scss';
+import './layout.scss'
 
 type LayoutProps = {
-  children?: React.ReactNode;
-  className?: string;
+  children?: React.ReactNode
+  className?: string
 }
 
-function Layout ( props: LayoutProps = {} ) {
-  const [message, setMessage] = useState( 'Hello, Layout!' );
-  const [variable, setVariable] = useState('Test Variable');
+function Layout(props: LayoutProps = {}) {
+  const [message, setMessage] = useState('Hello, Layout!')
+  const [variable, setVariable] = useState('Test Variable')
 
-  useEffect( () => {
+  useEffect(() => {
     //TODO: componentDidMount
     console.log('props.children = ', props.children)
 
     return () => {
       //TODO: componentWillUnmount
     }
-  }, []);
+  }, [])
 
-  useEffect( () => {
-    //TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나 
+  useEffect(() => {
+    //TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나
     return () => {
       //TODO: componentWillUpdate
     }
-  }, [ variable ]);
+  }, [variable])
 
   return (
     <div className={`layout ${props.className || ''}`}>
-      { message }
+      {message}
       <Navigation />
       <Outlet />
     </div>
-  );
-};
+  )
+}
 
-Layout.defaultProps = {};
+Layout.defaultProps = {}
 
-export default React.memo( Layout );
+export default React.memo(Layout)

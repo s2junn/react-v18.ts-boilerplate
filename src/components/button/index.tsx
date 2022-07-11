@@ -1,36 +1,25 @@
-import React from 'react';
+import React from 'react'
 
-import './button.scss';
+import './button.scss'
 
 export interface ButtonProps {
-  primary?: boolean;
-  backgroundColor?: string;
-  size?: 'small' | 'medium' | 'large';
-  label: string;
-  onClick?: () => void;
+  primary?: boolean
+  backgroundColor?: string
+  size?: 'small' | 'medium' | 'large'
+  label: string
+  onClick?: () => void
 }
 
-function Button ({
-  primary = false,
-  size = 'medium',
-  backgroundColor,
-  label,
-  ...props
-}: ButtonProps) {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+function Button({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) {
+  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary'
 
   return (
-    <button
-      type="button"
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={{ backgroundColor }}
-      {...props}
-    >
+    <button type='button' className={['storybook-button', `storybook-button--${size}`, mode].join(' ')} style={{ backgroundColor }} {...props}>
       {label}
     </button>
-  );
-};
+  )
+}
 
-Button.defaultProps = {};
+Button.defaultProps = {}
 
-export default React.memo( Button )
+export default React.memo(Button)

@@ -1,39 +1,39 @@
-import * as React from 'react';
-import { useState, useEffect } from 'react';
+import * as React from 'react'
+import { useState, useEffect } from 'react'
 
-import './about.scss';
+import './about.scss'
 
 type AboutProps = {
-  children?: React.ReactNode;
-  className?: string;
+  children?: React.ReactNode
+  className?: string
 }
 
-function About ( props: AboutProps = {} ) {
-  const [message, setMessage] = useState( 'Hello, About!' );
-  const [variable, setVariable] = useState('Test Variable');
+function About(props: AboutProps = {}) {
+  const [message, setMessage] = useState('Hello, About!')
+  const [variable, setVariable] = useState('Test Variable')
 
-  useEffect( () => {
+  useEffect(() => {
     //TODO: componentDidMount
     return () => {
       //TODO: componentWillUnmount
     }
-  }, []);
+  }, [])
 
-  useEffect( () => {
-    //TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나 
+  useEffect(() => {
+    //TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나
     return () => {
       //TODO: componentWillUpdate
     }
-  }, [ variable ]);
+  }, [variable])
 
   return (
     <div className={`about ${props.className || ''}`}>
-      { message }
-      { props.children }
+      {message}
+      {props.children}
     </div>
-  );
-};
+  )
+}
 
-About.defaultProps = {};
+About.defaultProps = {}
 
-export default React.memo( About );
+export default React.memo(About)
