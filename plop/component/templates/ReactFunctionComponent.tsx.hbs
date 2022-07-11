@@ -5,7 +5,7 @@ import { css } from '@emotion/react'
 
 type {{ properCase ComponentName }}Props = {
     children?: React.ReactNode
-    classNames?: string
+    className?: string
 }
 
 function {{ properCase ComponentName }}(props: {{ properCase ComponentName }}Props = {}) {
@@ -32,7 +32,7 @@ function {{ properCase ComponentName }}(props: {{ properCase ComponentName }}Pro
 
     return (
         <div 
-            className={`{{ dashCase ComponentName }} ${props.classNames || ''}`}
+            className={`{{ dashCase ComponentName }} ${props.className || ''}`}
             css={ {{ properCase ComponentName }}_css }>
             { message }<br />
             { props.children }
