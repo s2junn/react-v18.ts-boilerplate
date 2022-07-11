@@ -5,7 +5,7 @@ import './home.scss';
 
 type HomeProps = {
   children?: React.ReactNode;
-  classNames?: string;
+  className?: string;
 }
 
 function Home ( props: HomeProps = {} ) {
@@ -27,7 +27,7 @@ function Home ( props: HomeProps = {} ) {
   }, [ variable ]);
 
   return (
-    <div className={`home ${props.classNames || ''}`}>
+    <div className={`home ${props.className || ''}`}>
       { message }
       { props.children }
     </div>

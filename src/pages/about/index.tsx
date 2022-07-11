@@ -5,7 +5,7 @@ import './about.scss';
 
 type AboutProps = {
   children?: React.ReactNode;
-  classNames?: string;
+  className?: string;
 }
 
 function About ( props: AboutProps = {} ) {
@@ -27,7 +27,7 @@ function About ( props: AboutProps = {} ) {
   }, [ variable ]);
 
   return (
-    <div className={`about ${props.classNames || ''}`}>
+    <div className={`about ${props.className || ''}`}>
       { message }
       { props.children }
     </div>

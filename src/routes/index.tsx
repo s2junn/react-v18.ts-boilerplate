@@ -10,7 +10,7 @@ import About from '../pages/about'
 
 type BSLRouterProps = {
 	children?: React.ReactNode;
-	classNames?: string;
+	className?: string;
 };
 
 function BSLRouter(props: BSLRouterProps = {}) {

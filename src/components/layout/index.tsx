@@ -8,7 +8,7 @@ import './layout.scss';
 
 type LayoutProps = {
   children?: React.ReactNode;
-  classNames?: string;
+  className?: string;
 }
 
 function Layout ( props: LayoutProps = {} ) {
@@ -32,7 +32,7 @@ function Layout ( props: LayoutProps = {} ) {
   }, [ variable ]);
 
   return (
-    <div className={`layout ${props.classNames || ''}`}>
+    <div className={`layout ${props.className || ''}`}>
       { message }
       <Navigation />
       <Outlet />

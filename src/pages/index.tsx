@@ -5,7 +5,7 @@ import { useState, useEffect } from 'react';
 
 type RootProps = {
 	children?: React.ReactNode;
-	classNames?: string;
+	className?: string;
 };
 
 function Root(props: RootProps = {}) {
@@ -27,7 +27,7 @@ function Root(props: RootProps = {}) {
 	}, [variable]);
 
 	return (
-		<div className={`root-element ${props.classNames || ''}`}>
+		<div className={`root-element ${props.className || ''}`}>
 			{message}<br />
 			{props.children}
 		</div>

@@ -6,7 +6,7 @@ import './navigation.scss';
 
 type NavigationProps = {
   children?: React.ReactNode;
-  classNames?: string;
+  className?: string;
 }
 
 function Navigation ( props: NavigationProps = {} ) {
@@ -45,7 +45,7 @@ function Navigation ( props: NavigationProps = {} ) {
 	}
 
   return (
-    <div className={`navigation ${props.classNames || ''}`}>
+    <div className={`navigation ${props.className || ''}`}>
       { message }<br />
       { props.children }
       <button value="root" onClick={handleEvents}>root</button>
