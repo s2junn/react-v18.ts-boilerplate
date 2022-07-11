@@ -4,6 +4,4 @@ import Layout from './layout'
 import Navigation from './navigation'
 import Page from './page'
 
-export {
-    Button, Header, Layout, Navigation, Page
-}
+export { Button, Header, Layout, Navigation, Page }
