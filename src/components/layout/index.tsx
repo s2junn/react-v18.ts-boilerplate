@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 
 import Navigation from '../navigation';
 
-import './layout.scss';
+import { css } from '@emotion/react'
 
 type LayoutProps = {
   children?: React.ReactNode;
@@ -32,7 +32,9 @@ function Layout ( props: LayoutProps = {} ) {
   }, [ variable ]);
 
   return (
-    <div className={`layout ${props.classNames || ''}`}>
+    <div 
+      className={`layout ${props.classNames || ''}`}
+      css={ layout_css }>
       { message }
       <Navigation />
       <Outlet />
@@ -43,3 +45,7 @@ function Layout ( props: LayoutProps = {} ) {
 Layout.defaultProps = {};
 
 export default React.memo( Layout );
+
+const layout_css = css`
+&.layout {}
+`

@@ -1,7 +1,7 @@
 import * as React from 'react';
 import { useState, useEffect } from 'react';
 
-import './about.scss';
+import { css } from '@emotion/react'
 
 type AboutProps = {
   children?: React.ReactNode;
@@ -27,7 +27,9 @@ function About ( props: AboutProps = {} ) {
   }, [ variable ]);
 
   return (
-    <div className={`about ${props.classNames || ''}`}>
+    <div 
+      className={`about ${props.classNames || ''}`}
+      css={ about_css }>
       { message }
       { props.children }
     </div>
@@ -37,3 +39,7 @@ function About ( props: AboutProps = {} ) {
 About.defaultProps = {};
 
 export default React.memo( About );
+
+const about_css = css`
+&.about {}
+`

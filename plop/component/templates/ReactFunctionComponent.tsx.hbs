@@ -1,16 +1,16 @@
-import * as React from 'react';
-import { useState, useEffect } from 'react';
+import * as React from 'react'
+import { useState, useEffect } from 'react'
 
-import './{{ dashCase name }}.scss';
+import { css } from '@emotion/react'
 
-type {{ properCase name }}Props = {
-    children?: React.ReactNode;
-    classNames?: string;
+type {{ properCase ComponentName }}Props = {
+    children?: React.ReactNode
+    classNames?: string
 }
 
-function {{ properCase name }} ( props: {{ properCase name }}Props = {} ) {
-    const [message, setMessage] = useState( 'Hello, World!' );
-    const [variable, setVariable] = useState('Test Variable');
+function {{ properCase ComponentName }}(props: {{ properCase ComponentName }}Props = {}) {
+    const [message, setMessage] = useState('Hello, World!')
+    const [variable, setVariable] = useState('Test Variable')
 
     useEffect( () => {
         //TODO: componentDidMount
@@ -24,21 +24,27 @@ function {{ properCase name }} ( props: {{ properCase name }}Props = {} ) {
         return () => {
             //TODO: componentWillUpdate
         }
-    }, [ variable ]);
+    }, [variable]);
 
     function handleEvents() {
         //TODO: to do something
     }
 
     return (
-        <div className={`{{ dashCase name }} ${props.classNames || ''}`}>
+        <div 
+            className={`{{ dashCase ComponentName }} ${props.classNames || ''}`}
+            css={ {{ properCase ComponentName }}_css }>
             { message }<br />
             { props.children }
             <button onClick={ handleEvents }>button</button>
         </div>
     );
-};
+}
 
-{{ properCase name }}.defaultProps = {};
+{{ properCase ComponentName }}.defaultProps = {}
 
-export default React.memo( {{ properCase name }} );
+export default React.memo({{ properCase ComponentName }})
+
+const {{ snakeCase ComponentName }}_css = css`
+
+`

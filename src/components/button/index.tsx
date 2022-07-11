@@ -1,7 +1,6 @@
 import React from 'react';
 
-// import './button.scss';
-import { css, jsx } from '@emotion/react'
+import { css } from '@emotion/react'
 
 export interface ButtonProps {
   primary?: boolean;
@@ -24,7 +23,7 @@ function Button ({
     <button
       type="button"
       className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      css={ css`${button_css}` }
+      css={ button_css }
       style={{ backgroundColor }}
       {...props}
     >
@@ -38,7 +37,7 @@ Button.defaultProps = {};
 export default React.memo( Button )
 
 const button_css = css`
-/* &.storybook-button { */
+&.storybook-button {
   font-family: 'Nunito Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
   font-weight: 700;
   border: 0;
@@ -68,5 +67,5 @@ const button_css = css`
     font-size: 16px;
     padding: 12px 24px;
   }
-/* } */
+}
 `

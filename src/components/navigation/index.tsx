@@ -2,7 +2,7 @@ import * as React from 'react';
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import './navigation.scss';
+import { css } from '@emotion/react'
 
 type NavigationProps = {
   children?: React.ReactNode;
@@ -45,7 +45,9 @@ function Navigation ( props: NavigationProps = {} ) {
 	}
 
   return (
-    <div className={`navigation ${props.classNames || ''}`}>
+    <div 
+      className={`navigation ${props.classNames || ''}`}
+      css={ navigation_css }>
       { message }<br />
       { props.children }
       <button value="root" onClick={handleEvents}>root</button>
@@ -58,3 +60,7 @@ function Navigation ( props: NavigationProps = {} ) {
 Navigation.defaultProps = {};
 
 export default React.memo( Navigation );
+
+const navigation_css = css`
+&.navigation {}
+`
