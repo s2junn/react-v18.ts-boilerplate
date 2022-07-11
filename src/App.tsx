@@ -1,11 +1,12 @@
-import BSLRouter from './routes/index';
+import { RecoilRoot } from 'recoil'
+import BSLRouter from './routes/index'
 
 const App = () => {
-	return (
-		<>
-			<div>BSL USER FRONT APP</div>
-			<BSLRouter></BSLRouter>
-		</>
-	);
-};
-export default App;
+  return (
+    <RecoilRoot>
+      <div>BSL USER FRONT APP</div>
+      <BSLRouter></BSLRouter>
+    </RecoilRoot>
+  )
+}
+export default App
