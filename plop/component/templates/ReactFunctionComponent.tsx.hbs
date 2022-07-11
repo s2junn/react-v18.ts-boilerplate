@@ -3,12 +3,12 @@ import { useState, useEffect } from 'react'
 
 import styled from '@emotion/styled'
 
-type {{ properCase name }}Props = {
+type {{ properCase ComponentName }}Props = {
     children?: React.ReactNode
     classNames?: string
 }
 
-function {{ properCase name }}(props: {{ properCase name }}Props = {}) {
+function {{ properCase ComponentName }}(props: {{ properCase ComponentName }}Props = {}) {
     const [message, setMessage] = useState( 'Hello, World!' )
     const [variable, setVariable] = useState('Test Variable')
 
@@ -31,20 +31,20 @@ function {{ properCase name }}(props: {{ properCase name }}Props = {}) {
     }
 
     return (
-        <Styled{{ properCase name }} className={['{{ dashCase name }}', props.classNames || ''].join(' ')}>
+        <Styled{{ properCase ComponentName }} className={['{{ dashCase ComponentName }}', props.classNames || ''].join(' ')}>
             { message }<br />
             { props.children }
             <button onClick={ handleEvents }>button</button>
-        </Styled{{ properCase name }}>
+        </Styled{{ properCase ComponentName }}>
     );
 };
 
-{{ properCase name }}.defaultProps = {};
+{{ properCase ComponentName }}.defaultProps = {};
 
-export default React.memo({{ properCase name }})
+export default React.memo({{ properCase ComponentName }})
 
-const Styled{{ properCase name }} = styled.div`
-&.{{ dashCase name }} {
+const Styled{{ properCase ComponentName }} = styled.div`
+&.{{ dashCase ComponentName }} {
 
 }
 `
