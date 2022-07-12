@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import Button from '../button'
+import { Button } from '@/components'
 
 type User = {
   name: string

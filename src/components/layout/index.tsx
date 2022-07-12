@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import styled from '@emotion/styled'
 
-import Navigation from '../navigation'
+import { Navigation } from '@/components'
 
 type LayoutProps = {
   children?: React.ReactNode

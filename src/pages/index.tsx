@@ -2,8 +2,6 @@ import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-// import './{{kebab name}}.scss';
-
 type RootProps = {
   children?: React.ReactNode
   className?: string

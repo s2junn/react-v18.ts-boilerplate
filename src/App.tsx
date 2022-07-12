@@ -1,5 +1,6 @@
 import { RecoilRoot } from 'recoil'
-import BSLRouter from './routes/index'
+
+import BSLRouter from '@/routes/index'
 
 const App = () => {
   return (

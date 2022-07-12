@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from '@emotion/styled'
 
-import { Header } from '..'
+import { Header } from '@/components'
 
 type User = {
   name: string

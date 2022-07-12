@@ -2,11 +2,10 @@ import * as React from 'react'
 import type { RouteObject } from 'react-router-dom'
 import { useRoutes } from 'react-router-dom'
 
-// import { Layout } from '@/components'
-import { Layout } from '../components'
-import Root from '../pages'
-import Home from '../pages/home'
-import About from '../pages/about'
+import { Layout } from '@/components'
+import Root from '@/pages'
+import Home from '@/pages/home'
+import About from '@/pages/about'
 
 function BSLRouter() {
   const routes: RouteObject[] = [

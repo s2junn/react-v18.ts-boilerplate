@@ -224,6 +224,7 @@ CSS-in-JS 라이브러리들 중에서 SSR 설정이 따로 필요하지 않고,
 > References:
 >
 > - <https://2021.stateofcss.com/ko-KR/>
+> - <https://brunch.co.kr/@kmongdev/17>
 > - <https://velog.io/@kimhyo_0218/Storybook-Emotion-%EA%B3%BC-Storybook-TypeScript-%EB%A1%9C-%EB%94%94%EC%9E%90%EC%9D%B8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0-%EC%B4%88%EA%B8%B0-%EC%85%8B%ED%8C%85%ED%8E%B8>-
 
 ## <br />
