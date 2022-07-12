@@ -14,7 +14,11 @@ function Button({ primary = false, size = 'medium', backgroundColor, label, ...p
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary'
 
   return (
-    <StyledButton type='button' className={['storybook-button', `storybook-button--${size}`, mode].join(' ')} style={{ backgroundColor }} {...props}>
+    <StyledButton
+      type='button'
+      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      style={{ backgroundColor }}
+      {...props}>
       {label}
     </StyledButton>
   )
