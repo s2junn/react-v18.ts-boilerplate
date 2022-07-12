@@ -1,5 +1,5 @@
 module.exports = {
-  printWidth: 200,
+  printWidth: 120,
   tabWidth: 2,
   useTabs: false,
   semi: false,
@@ -11,5 +11,5 @@ module.exports = {
   bracketSameLine: true,
   jsxBracketSameLine: true,
   arrowParens: 'always',
-  endOfLine: 'if',
+  endOfLine: 'lf',
 }

@@ -31,12 +31,15 @@ React v18 에서는 다음과 같은 기능이 추가되었다.
 > yarn add react react-dom
 ```
 
+- react
+- react-dom
+
 ## <br />
 
 # Webpack(Bundler)
 
 ```
-> yarn add -D webpack webpack-cli webpack-dev-server html-webpack-plugin copy-webpack-plugin clean-webpack-plugin webpack-manifest-plugin webpack-merge webpack-bundle-analyzer
+> yarn add -D webpack webpack-cli webpack-dev-server html-webpack-plugin copy-webpack-plugin webpack-manifest-plugin webpack-merge webpack-bundle-analyzer
 ```
 
 - webpack
@@ -49,8 +52,6 @@ React v18 에서는 다음과 같은 기능이 추가되었다.
   - 최초 실행될 HTML 파일에 번들링된 파일을 연결해주는 모듈
 - copy-webpack-plugin
   - static files 를 빌드 산출물에 복사해주는 모듈
-- clean-webpack-plugin
-  - 번들링된 파일을 정리하여 빌드시 충돌을 최소화해주는 모듈
 - webpack-manifest-plugin
   - webpack 으로 번들링된 파일명을 최종 산출물인 HTML 에서 사용할 수 있도록 alias 같은 형태로 관리해주는 manifest.json 파일 생성 모듈
 - webpack-merge
@@ -83,7 +84,10 @@ ES6 이상으로 작성된 코드를 ES5 버전으로 변환(브라우저 호환
 - @babel/preset-react
   - JSX 문법을 Javascript 로 변환해주는 모듈
 - babel-loader
+
 - core-js@3
+
+  -
 
 ```
 .babelrc
@@ -209,8 +213,18 @@ CSS-in-JS 라이브러리들 중에서 SSR 설정이 따로 필요하지 않고,
 
 ```
 > yarn add @emotion/styled @emotion/react
-> yarn add -D @emotion/babel-plugin
+> yarn add -D @emotion/babel-plugin @emotion/babel-preset-css-prop
 ```
+
+- @emotion/react
+- @emotion/styled
+- @emotion/babel-plugin
+- @emotion/babel-preset-css-prop
+
+> References:
+>
+> - <https://2021.stateofcss.com/ko-KR/>
+> - <https://velog.io/@kimhyo_0218/Storybook-Emotion-%EA%B3%BC-Storybook-TypeScript-%EB%A1%9C-%EB%94%94%EC%9E%90%EC%9D%B8-%EC%8B%9C%EC%8A%A4%ED%85%9C-%EA%B5%AC%EC%B6%95%ED%95%98%EA%B8%B0-%EC%B4%88%EA%B8%B0-%EC%85%8B%ED%8C%85%ED%8E%B8>-
 
 ## <br />
 
@@ -240,3 +254,54 @@ CSS-in-JS 라이브러리들 중에서 SSR 설정이 따로 필요하지 않고,
 ```
 > npx -p @storybook/cli sb init
 ```
+
+```
+// .storybook/main.js
+const path = require('path');
+
+module.exports = {
+  "stories": [
+    "../src/**/*.stories.mdx",
+    "../src/**/*.stories.@(js|jsx|ts|tsx)"
+  ],
+  "addons": [
+    "@storybook/addon-links",
+    "@storybook/addon-essentials",
+    "@storybook/addon-interactions"
+  ],
+  "framework": "@storybook/react",
+  "core": {
+    "builder": "@storybook/builder-webpack5"
+  },
+  webpackFinal: async (config, { configType }) => {
+    config.module.rules.push({
+      test: /\.scss$/,
+      use: ['style-loader', 'css-loader', 'sass-loader'],
+      include: path.resolve(__dirname, '../'),
+    });
+
+    return config;
+  }
+}
+```
+
+## <br />
+
+# Recoil
+
+```
+> yarn add recoil
+```
+
+> References
+>
+> - <https://velog.io/@juno7803/Recoil-Recoil-200-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0>
+
+## <br />
+
+# React Query
+
+> References
+>
+> - <https://velog.io/@jiseong/React-Query-Recoil-%EC%A0%81%EC%9A%A9%EA%B8%B01>
+> - <https://velog.io/@jiseong/React-Query-Recoil-%EC%A0%81%EC%9A%A9%EA%B8%B02> > <https://velog.io/@jiseong/react-query-%EC%97%90%EB%9F%AC-%ED%95%B8%EB%93%A4%EB%A7%81>
