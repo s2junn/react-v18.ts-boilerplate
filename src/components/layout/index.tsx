@@ -2,7 +2,7 @@ import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 
-import Navigation from '../../molecules/navigation'
+import Navigation from '../navigation'
 
 import { css } from '@emotion/react'
 
