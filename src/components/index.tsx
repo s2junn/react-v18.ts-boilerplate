@@ -1,7 +1,7 @@
-import Button from './atoms/button'
-import Navigation from './molecules/navigation'
-import Header from './organisms/header'
-import Layout from './templates/layout'
-import Page from './templates/page'
+import Button from './button'
+import Navigation from './navigation'
+import Header from './header'
+import Layout from './layout'
+import Page from './page'
 
 export { Button, Header, Layout, Navigation, Page }

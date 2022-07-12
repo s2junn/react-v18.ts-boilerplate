@@ -1,6 +1,6 @@
 import React from 'react'
 
-import Button from '../../atoms/button'
+import Button from '../button'
 import './header.scss'
 
 type User = {
