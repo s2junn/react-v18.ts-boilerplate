@@ -1,9 +1,7 @@
-import Button from './button'
-import Header from './header'
-import Layout from './layout'
-import Navigation from './navigation'
-import Page from './page'
+import Button from './atoms/button'
+import Header from './organisms/header'
+import Layout from './templates/layout'
+import Navigation from './molecules/navigation'
+import Page from './templates/page'
 
-export {
-    Button, Header, Layout, Navigation, Page
-}
+export { Button, Header, Layout, Navigation, Page }
