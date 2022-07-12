@@ -59,6 +59,10 @@ React v18 에서는 다음과 같은 기능이 추가되었다.
 - webpack-bundle-analyzer
   - 번들링된 chunk 의 사이즈를 도식화하여 확인시켜주는 모듈
 
+> 기타 설정  
+> paths alias  
+> <https://jonghyun-park.medium.com/webpack-typescript%EC%97%90%EC%84%9C-path-alias-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0-ec32428622d2>
+
 > References:
 >
 > - <https://webpack.js.org/configuration/>
@@ -306,3 +310,11 @@ module.exports = {
 >
 > - <https://velog.io/@jiseong/React-Query-Recoil-%EC%A0%81%EC%9A%A9%EA%B8%B01>
 > - <https://velog.io/@jiseong/React-Query-Recoil-%EC%A0%81%EC%9A%A9%EA%B8%B02> > <https://velog.io/@jiseong/react-query-%EC%97%90%EB%9F%AC-%ED%95%B8%EB%93%A4%EB%A7%81>
+
+## <br />
+
+# 다국어 설정 - i18n
+
+```
+> yarn add react-i18next i18next i18next-browser-languagedetector
+```

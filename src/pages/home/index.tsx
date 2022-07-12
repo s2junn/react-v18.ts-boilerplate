@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
+import { useTranslation } from 'react-i18next'
 
 import styled from '@emotion/styled'
 
@@ -9,7 +10,8 @@ type HomeProps = {
 }
 
 function Home(props: HomeProps = {}) {
-  const [message, setMessage] = useState('Hello, Home!')
+  const { t, i18n } = useTranslation()
+  const [message, setMessage] = useState(t('Welcome to React') + ', Home!')
   const [variable, setVariable] = useState('Test Variable')
 
   useEffect(() => {
