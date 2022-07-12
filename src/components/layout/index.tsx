@@ -1,10 +1,9 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
+import styled from '@emotion/styled'
 
 import Navigation from '../navigation'
-
-import styled from '@emotion/styled'
 
 type LayoutProps = {
   children?: React.ReactNode

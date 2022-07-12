@@ -1,10 +1,10 @@
 import React from 'react'
 import { ComponentStory, ComponentMeta } from '@storybook/react'
 
-import { Header } from '../components'
+import { Header } from '../../components'
 
 export default {
-  title: 'Example/Header',
+  title: 'Example/Organisms/Header',
   component: Header,
   parameters: {
     // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
