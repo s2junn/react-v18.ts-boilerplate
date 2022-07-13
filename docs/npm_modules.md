@@ -209,7 +209,7 @@ CSS-in-JS 라이브러리들 중에서 SSR 설정이 따로 필요하지 않고,
 
 ```
 > yarn add @emotion/styled @emotion/react
-> yarn add -D @emotion/babel-plugin
+> yarn add -D @emotion/babel-plugin @emotion/babel-preset-css-prop
 ```
 
 ## <br />
