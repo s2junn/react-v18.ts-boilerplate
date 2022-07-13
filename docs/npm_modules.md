@@ -316,5 +316,39 @@ module.exports = {
 # 다국어 설정 - i18n
 
 ```
-> yarn add react-i18next i18next i18next-browser-languagedetector
+> yarn add react-i18next i18next i18next-browser-languagedetector i18next-http-backend
 ```
+
+```
+// /config/i18n.js
+import i18n from 'i18next'
+import Backend from 'i18next-http-backend'
+import LanguageDetector from 'i18next-browser-languagedetector'
+import { initReactI18next } from 'react-i18next'
+
+i18n
+  .use(Backend)
+  .use(LanguageDetector)
+  .use(initReactI18next) // passes i18n down to react-i18next
+  .init({
+    backend: {
+      loadPath: '/locales/{{lng}}/{{ns}}.json',
+      addPath: '/locales/add/{{lng}}/{{ns}}',
+    },
+    lng: 'ko',
+    fallbackLng: 'ko',
+    whitelist: ['de', 'en', 'fr', 'jp', 'ko'],
+    ns: ['translations'],
+    defaultNS: 'translations',
+    debug: true,
+    keySeparator: false,
+    interpolation: {
+      escapeValue: false, // react already safes from xss
+    },
+  })
+
+export default i18n
+
+```
+
+.json 파일은 public/ 에서 관리한다.(src/ 에 있으면 bundle 의 사이즈가 커지기 때문에)

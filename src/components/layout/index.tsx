@@ -10,7 +10,7 @@ const languages = [
   { name: '독일어', code: 'de' },
   { name: 'English', code: 'en' },
   { name: 'Français', code: 'fr' },
-  { name: '日本語', code: 'jp' },
+  { name: '日本語', code: 'ja' },
   { name: '한국어', code: 'ko' },
 ]
 
@@ -81,5 +81,6 @@ export default React.memo(Layout)
 
 const StyledLayout = styled.div`
   &.layout {
+    background-color: green;
   }
 `
