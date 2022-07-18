@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import { useTranslation } from 'react-i18next'
 
 type RootProps = {
   children?: React.ReactNode
@@ -8,7 +9,8 @@ type RootProps = {
 }
 
 function Root(props: RootProps = {}) {
-  const [message, setMessage] = useState('Hello, Root!')
+  const { t, i18n } = useTranslation()
+  const [message, setMessage] = useState(t('Welcome to React') + ', Root!')
   const [variable, setVariable] = useState('Test Variable')
 
   const navigate = useNavigate()

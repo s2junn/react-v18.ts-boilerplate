@@ -1,10 +1,39 @@
 import React from 'react'
+import { useState } from 'react'
+import { useTranslation } from 'react-i18next'
 import styled from '@emotion/styled'
 
-import { Button } from '@/components'
+import { Button, SelectBox } from '@/components'
 
-type User = {
-  name: string
+import type { User } from '@/@types'
+
+const LanguageSelectBox = () => {
+  const languages = [
+    { label: '독일어', value: 'de' },
+    { label: 'English', value: 'en' },
+    { label: 'Français', value: 'fr' },
+    { label: '日本語', value: 'ja' },
+    { label: '한국어', value: 'ko' },
+  ]
+
+  const [language, setLanguage] = useState('ko') // default language
+
+  const { t, i18n } = useTranslation()
+
+  const handleChangeLocale = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const lang = e.target.value
+
+    setLanguage(lang)
+
+    i18n.changeLanguage(lang)
+  }
+
+  return (
+    <div className='switcher'>
+      <span>Languages: </span>
+      <SelectBox options={languages} default={'ko'} onChange={handleChangeLocale} />
+    </div>
+  )
 }
 
 interface HeaderProps {
@@ -28,6 +57,7 @@ function Header({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) {
           </svg>
           <h1>Acme</h1>
         </div>
+        <LanguageSelectBox />
         <div>
           {user ? (
             <>
