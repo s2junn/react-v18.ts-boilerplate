@@ -3,7 +3,10 @@ import { useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import styled from '@emotion/styled'
 
+import { Header } from '@/components'
 import { Navigation } from '@/components'
+
+import type { User } from '@/@types'
 
 type LayoutProps = {
   children?: React.ReactNode
@@ -11,8 +14,8 @@ type LayoutProps = {
 }
 
 function Layout(props: LayoutProps = {}) {
-  const [message, setMessage] = useState('Hello, Layout!')
-  const [variable, setVariable] = useState('Test Variable')
+  const [message, setMessage] = useState('[Layout]: Hello!')
+  const [user, setUser] = useState<User>()
 
   useEffect(() => {
     //TODO: componentDidMount
@@ -23,15 +26,14 @@ function Layout(props: LayoutProps = {}) {
     }
   }, [])
 
-  useEffect(() => {
-    //TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나
-    return () => {
-      //TODO: componentWillUpdate
-    }
-  }, [variable])
-
   return (
     <StyledLayout className={`layout ${props.className || ''}`}>
+      <Header
+        user={user}
+        onLogin={() => setUser({ name: 'Jane Doe' })}
+        onLogout={() => setUser(undefined)}
+        onCreateAccount={() => setUser({ name: 'Jane Doe' })}
+      />
       {message}
       <Navigation />
       <Outlet />
@@ -45,5 +47,6 @@ export default React.memo(Layout)
 
 const StyledLayout = styled.div`
   &.layout {
+    background-color: green;
   }
 `
