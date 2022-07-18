@@ -11,7 +11,7 @@ type HomeProps = {
 
 function Home(props: HomeProps = {}) {
   const { t, i18n } = useTranslation()
-  const [message, setMessage] = useState(t('Welcome to React') + ', Home!')
+  const [message, setMessage] = useState('Hello, Home!')
   const [variable, setVariable] = useState('Test Variable')
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function Home(props: HomeProps = {}) {
 
   return (
     <StyledHome className={`home ${props.className || ''}`}>
-      {message}
+      {t('Welcome to React')}
       {props.children}
     </StyledHome>
   )

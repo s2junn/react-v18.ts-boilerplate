@@ -1,5 +1,5 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
 
@@ -10,7 +10,8 @@ type RootProps = {
 
 function Root(props: RootProps = {}) {
   const { t, i18n } = useTranslation()
-  const [message, setMessage] = useState(t('Welcome to React') + ', Root!')
+
+  const [message, setMessage] = useState('Hello, Root!')
   const [variable, setVariable] = useState('Test Variable')
 
   const navigate = useNavigate()
@@ -18,7 +19,6 @@ function Root(props: RootProps = {}) {
   useEffect(() => {
     //TODO: componentDidMount
     // navigate('/home')
-
     return () => {
       //TODO: componentWillUnmount
     }
@@ -34,6 +34,8 @@ function Root(props: RootProps = {}) {
   return (
     <div className={`root-element ${props.className || ''}`}>
       {message}
+      <br />
+      {t('Welcome to React')}
       <br />
       {props.children}
     </div>
