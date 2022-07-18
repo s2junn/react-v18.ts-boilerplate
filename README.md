@@ -9,10 +9,21 @@ It's made up of webpack(bundler), babel(transpiler), eslint + prettier, typescri
 
 ```
 react-v18.ts-boilertemplate/
+  config/
+    i18n.js
+    webpack.common.js
+    webpack.dev.js
+    webpack.prod.js
+  docs/
+  plop/
   public/
+    locales/
+      en/
+      ko/
     vendor/
     index.html
   src/
+    __test__
     @types/
       index.d.ts
       shape.d.ts
@@ -34,9 +45,11 @@ react-v18.ts-boilertemplate/
         index.scss
     routes/
       index.tsx
-    store/
-      contexts/
+    recoil/
+      atoms/
+      selectors/
         ...
+    stories/
     utils/
       datetime.ts
       index.ts
