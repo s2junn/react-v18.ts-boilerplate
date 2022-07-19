@@ -1,6 +1,18 @@
+import * as React from 'react'
 import { withRouter } from 'storybook-addon-react-router-v6'
 
-export const decorators = [withRouter]
+import GlobalStyles from '@/assets/styles/global'
+
+export const decorators = [
+  withRouter,
+  (Story) => (
+    <>
+      <GlobalStyles />
+      <Story />
+    </>
+  ),
+]
+
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {

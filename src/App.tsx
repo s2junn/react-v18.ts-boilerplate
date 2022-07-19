@@ -1,12 +1,16 @@
 import { RecoilRoot } from 'recoil'
 
 import BSLRouter from '@/routes/index'
+import GlobalStyles from '@/assets/styles/global'
 
 const App = () => {
   return (
-    <RecoilRoot>
-      <BSLRouter></BSLRouter>
-    </RecoilRoot>
+    <>
+      <GlobalStyles />
+      <RecoilRoot>
+        <BSLRouter></BSLRouter>
+      </RecoilRoot>
+    </>
   )
 }
 export default App

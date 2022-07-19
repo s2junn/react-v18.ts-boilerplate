@@ -29,7 +29,7 @@ function Navigation(props: NavigationProps = {}) {
   }, [variable])
 
   function handleEvents(e: React.MouseEvent<HTMLButtonElement>) {
-    switch (e.target.value) {
+    switch ((e.target as HTMLButtonElement).value) {
       case 'root':
         navigate('/')
         break
@@ -45,9 +45,6 @@ function Navigation(props: NavigationProps = {}) {
 
   return (
     <StyledNavigation className={['navigation', props.className || ''].join(' ')}>
-      {message}
-      <br />
-      {props.children}
       <button value='root' onClick={handleEvents}>
         root
       </button>
@@ -67,5 +64,7 @@ export default React.memo(Navigation)
 
 const StyledNavigation = styled.div`
   &.navigation {
+    display: flex;
+    flex-direction: row;
   }
 `
