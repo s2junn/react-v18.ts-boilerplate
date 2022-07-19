@@ -1,11 +1,13 @@
 import { RecoilRoot } from 'recoil'
 
+import Meta from '@/components/meta'
 import BSLRouter from '@/routes/index'
 
 const App = () => {
   return (
     <RecoilRoot>
-      <BSLRouter></BSLRouter>
+      <Meta />
+      <BSLRouter />
     </RecoilRoot>
   )
 }
