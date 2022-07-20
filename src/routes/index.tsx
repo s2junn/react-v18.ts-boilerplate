@@ -3,9 +3,12 @@ import type { RouteObject } from 'react-router-dom'
 import { useRoutes } from 'react-router-dom'
 
 import { Layout } from '@/components'
+
 import Root from '@/pages'
 import Home from '@/pages/home'
 import About from '@/pages/about'
+
+import { examples } from '@/routes/examples'
 
 function BSLRouter() {
   const routes: RouteObject[] = [
@@ -13,6 +16,7 @@ function BSLRouter() {
       path: '/',
       element: <Layout />,
       children: [
+        ...examples,
         { index: true, element: <Root /> },
         { path: '/home', element: <Home /> },
         { path: '/about', element: <About /> },

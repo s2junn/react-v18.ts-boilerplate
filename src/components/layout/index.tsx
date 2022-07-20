@@ -19,8 +19,6 @@ function Layout(props: LayoutProps = {}) {
 
   useEffect(() => {
     //TODO: componentDidMount
-    console.log('props.children = ', props.children)
-
     return () => {
       //TODO: componentWillUnmount
     }

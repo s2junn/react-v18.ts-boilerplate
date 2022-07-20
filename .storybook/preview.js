@@ -2,15 +2,18 @@ import * as React from 'react'
 import { withRouter } from 'storybook-addon-react-router-v6'
 
 import GlobalStyles from '@/assets/styles/global'
+import { default as Theme } from '@/assets/styles/themes'
 
 export const decorators = [
   withRouter,
-  (Story) => (
-    <>
-      <GlobalStyles />
-      <Story />
-    </>
-  ),
+  (Story) => {
+    return (
+      <>
+        <GlobalStyles theme={Theme.light} />
+        <Story />
+      </>
+    )
+  },
 ]
 
 export const parameters = {

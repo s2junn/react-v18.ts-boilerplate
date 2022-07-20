@@ -1,37 +1,32 @@
-import React from 'react'
+import * as React from 'react'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import styled from '@emotion/styled'
 
 import { Button, SelectBox } from '@/components'
 
+import useTheme from '@/utils/themes'
 import type { User } from '@/@types'
 
-const LanguageSelectBox = () => {
-  const languages = [
-    { label: '독일어', value: 'de' },
-    { label: 'English', value: 'en' },
-    { label: 'Français', value: 'fr' },
-    { label: '日本語', value: 'ja' },
-    { label: '한국어', value: 'ko' },
+const ThemeSelectBox = () => {
+  const themes = [
+    { label: 'light', value: 'light' },
+    { label: 'dark', value: 'dark' },
   ]
 
-  const [language, setLanguage] = useState('ko') // default language
+  // const [theme, setTheme] = useState('light') // default theme
+  const [theme, setTheme] = useTheme()
 
-  const { t, i18n } = useTranslation()
-
-  const handleChangeLocale = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const lang = e.target.value
-
-    setLanguage(lang)
-
-    i18n.changeLanguage(lang)
+  const handleChangeTheme = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const theme = e.target.value
+    console.log('Header.tsx :: theme = ', theme)
+    setTheme(theme)
   }
 
   return (
     <div className='switcher'>
       <span>Languages: </span>
-      <SelectBox options={languages} default={'ko'} onChange={handleChangeLocale} />
+      <SelectBox options={themes} default={theme} onChange={handleChangeTheme} />
     </div>
   )
 }
@@ -57,7 +52,7 @@ function Header({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) {
           </svg>
           <h1>Acme</h1>
         </div>
-        <LanguageSelectBox />
+        <ThemeSelectBox />
         <div>
           {user ? (
             <>
