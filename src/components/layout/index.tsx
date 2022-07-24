@@ -3,12 +3,11 @@ import { useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
 import styled from '@emotion/styled'
 
-import { Header } from '@/components'
-import { Navigation } from '@/components'
+import { Header, Navigation } from '@/components'
 
 import type { User } from '@/@types'
 
-type LayoutProps = {
+export type LayoutProps = {
   children?: React.ReactNode
   className?: string
 }
@@ -18,14 +17,14 @@ function Layout(props: LayoutProps = {}) {
   const [user, setUser] = useState<User>()
 
   useEffect(() => {
-    //TODO: componentDidMount
+    // TODO: componentDidMount
     return () => {
-      //TODO: componentWillUnmount
+      // TODO: componentWillUnmount
     }
   }, [])
 
   return (
-    <StyledLayout className={`layout ${props.className || ''}`}>
+    <StyledLayout className={`layout ${Boolean(props.className) || ''}`}>
       <Header
         user={user}
         onLogin={() => setUser({ name: 'Jane Doe' })}

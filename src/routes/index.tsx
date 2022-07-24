@@ -10,7 +10,7 @@ import About from '@/pages/about'
 
 import { examples } from '@/routes/examples'
 
-function BSLRouter() {
+function Router(): React.ReactElement | null {
   const routes: RouteObject[] = [
     {
       path: '/',
@@ -27,4 +27,4 @@ function BSLRouter() {
   return useRoutes(routes)
 }
 
-export default BSLRouter
+export default Router

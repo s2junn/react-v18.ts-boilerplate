@@ -1,7 +1,7 @@
 import * as React from 'react'
 import { withRouter } from 'storybook-addon-react-router-v6'
 
-import GlobalStyles from '@/assets/styles/global'
+import GlobalStyles from '@/assets/styles/base'
 import { default as Theme } from '@/assets/styles/themes'
 
 export const decorators = [

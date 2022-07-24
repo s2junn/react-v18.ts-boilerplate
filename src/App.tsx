@@ -4,22 +4,23 @@ import { RecoilRoot } from 'recoil'
 import { ThemeProvider } from '@emotion/react'
 
 import Meta from '@/components/meta'
-import BSLRouter from '@/routes/index'
-import GlobalStyles from '@/assets/styles/global'
+import Router from '@/routes/index'
+import GlobalStyles from '@/assets/styles/base'
 import useTheme from '@/utils/themes'
-import { default as Theme } from '@/assets/styles/themes'
+import Themes from '@/assets/styles/themes'
 
-const App = () => {
+function App(): React.ReactElement {
   const [theme, setTheme] = useState(useTheme()[0])
 
   return (
-    <ThemeProvider theme={Theme[theme]}>
+    <ThemeProvider theme={Themes[theme]}>
       <Meta />
-      <GlobalStyles theme={Theme[theme]} />
+      <GlobalStyles theme={Themes[theme]} />
       <RecoilRoot>
-        <BSLRouter />
+        <Router />
       </RecoilRoot>
     </ThemeProvider>
   )
 }
+
 export default App

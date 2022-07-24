@@ -24,9 +24,9 @@ export const dark: Theme = {
   fontColor: '#eee',
 }
 
-const mode: ThemeGroup = {
+const Themes: ThemeGroup = {
   light,
   dark,
 }
 
-export default mode
+export default Themes
