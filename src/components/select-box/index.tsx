@@ -15,12 +15,11 @@ type SelectBoxProps = {
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void
 }
 
-function SelectBox(props: SelectBoxProps = { options: [] }) {
+function SelectBox(props: SelectBoxProps = { options: [] }): React.ReactElement {
   const [message, setMessage] = useState('Hello, World!')
   const [variable, setVariable] = useState('Test Variable')
 
   useEffect(() => {
-    console.log('dfadfa')
     // TODO: componentDidMount
     return () => {
       // TODO: componentWillUnmount
@@ -43,9 +42,12 @@ function SelectBox(props: SelectBoxProps = { options: [] }) {
   }
 
   return (
-    <StyledSelectBox className={['select-box', Boolean(props.className) || ''].join(' ')} onChange={onSelectChanged}>
+    <StyledSelectBox
+      className={['select-box', Boolean(props.className) || ''].join(' ')}
+      defaultValue={props.default}
+      onChange={onSelectChanged}>
       {props.options.map((option) => (
-        <option key={option.value} value={option.value} selected={props.default === option.value}>
+        <option key={option.value} value={option.value}>
           {option.label}
         </option>
       ))}

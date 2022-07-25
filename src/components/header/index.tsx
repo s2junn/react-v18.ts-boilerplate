@@ -1,32 +1,26 @@
 import * as React from 'react'
-import { useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
 import styled from '@emotion/styled'
 
 import { Button, SelectBox } from '@/components'
-
-import useTheme from '@/utils/themes'
+import { themeState, themeValue, ThemeShapes } from '@/modules/theme'
+import Themes from '@/assets/styles/themes'
 import type { User } from '@/@types'
 
-const ThemeSelectBox = () => {
-  const themes = [
-    { label: 'light', value: 'light' },
-    { label: 'dark', value: 'dark' },
-  ]
+function ThemeSelectBox(): React.ReactElement {
+  const themes = Object.keys(Themes).map((theme) => ({ label: theme, value: theme }))
+  const theme = useRecoilValue<ThemeShapes>(themeState)
+  const setTheme = useSetRecoilState<ThemeShapes>(themeValue)
 
-  // const [theme, setTheme] = useState('light') // default theme
-  const [theme, setTheme] = useTheme()
-
-  const handleChangeTheme = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleChangeTheme = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     const theme = e.target.value
-    console.log('Header.tsx :: theme = ', theme)
-    setTheme(theme)
+    setTheme(theme as ThemeShapes)
   }
 
   return (
     <div className='switcher'>
       <span>Languages: </span>
-      <SelectBox options={themes} default={theme} onChange={handleChangeTheme} />
+      <SelectBox options={themes} default={String(theme)} onChange={handleChangeTheme} />
     </div>
   )
 }
@@ -38,7 +32,7 @@ interface HeaderProps {
   onCreateAccount: () => void
 }
 
-function Header({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) {
+function Header({ user, onLogin, onLogout, onCreateAccount }: HeaderProps): React.ReactElement {
   return (
     <StyledHeader>
       <div className='wrapper'>

@@ -1,24 +1,22 @@
 import * as React from 'react'
-import { useState, useEffect } from 'react'
-import { RecoilRoot } from 'recoil'
+import { useRecoilValue } from 'recoil'
 import { ThemeProvider } from '@emotion/react'
 
 import Meta from '@/components/meta'
-import Router from '@/routes/index'
 import GlobalStyles from '@/assets/styles/base'
-import useTheme from '@/utils/themes'
+import Router from '@/routes/index'
+
 import Themes from '@/assets/styles/themes'
+import { themeValue } from '@/modules/theme'
 
 function App(): React.ReactElement {
-  const [theme, setTheme] = useState(useTheme()[0])
+  const theme = Themes[useRecoilValue(themeValue)]
 
   return (
-    <ThemeProvider theme={Themes[theme]}>
+    <ThemeProvider theme={theme}>
       <Meta />
-      <GlobalStyles theme={Themes[theme]} />
-      <RecoilRoot>
-        <Router />
-      </RecoilRoot>
+      <GlobalStyles theme={theme} />
+      <Router />
     </ThemeProvider>
   )
 }

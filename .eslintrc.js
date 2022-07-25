@@ -45,13 +45,14 @@ module.exports = {
     'no-dupe-class-members': 'warn',
     'no-empty-function': 'warn',
     'no-nested-ternary': 'off',
-    'no-plusplus': 'off',
     'no-param-reassign': [
       'error',
       {
         props: false,
       },
     ],
+    'no-plusplus': 'off',
+    'no-prototype-builtins': 'off',
     // disallow specified syntax(ex. WithStatement)
     'no-restricted-syntax': ['off', 'ForOfStatement'],
     'no-shadow': 'off',
