@@ -15,26 +15,26 @@ type SelectBoxProps = {
   onChange?: (e: React.ChangeEvent<HTMLSelectElement>) => void
 }
 
-function SelectBox(props: SelectBoxProps = { options: [] }) {
+function SelectBox(props: SelectBoxProps = { options: [] }): React.ReactElement {
   const [message, setMessage] = useState('Hello, World!')
   const [variable, setVariable] = useState('Test Variable')
 
   useEffect(() => {
-    //TODO: componentDidMount
+    // TODO: componentDidMount
     return () => {
-      //TODO: componentWillUnmount
+      // TODO: componentWillUnmount
     }
   }, [])
 
   useEffect(() => {
-    //TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나
+    // TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나
     return () => {
-      //TODO: componentWillUpdate
+      // TODO: componentWillUpdate
     }
   }, [variable])
 
-  const onSelectChanged = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    //TODO: to do something
+  const onSelectChanged = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    // TODO: to do something
     console.log(e.target.value)
     if (props.onChange) {
       props.onChange(e)
@@ -42,9 +42,12 @@ function SelectBox(props: SelectBoxProps = { options: [] }) {
   }
 
   return (
-    <StyledSelectBox className={['select-box', props.className || ''].join(' ')} onChange={onSelectChanged}>
+    <StyledSelectBox
+      className={['select-box', Boolean(props.className) || ''].join(' ')}
+      defaultValue={props.default}
+      onChange={onSelectChanged}>
       {props.options.map((option) => (
-        <option key={option.value} value={option.value} selected={props.default === option.value}>
+        <option key={option.value} value={option.value}>
           {option.label}
         </option>
       ))}

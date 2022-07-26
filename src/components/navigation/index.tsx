@@ -39,6 +39,9 @@ function Navigation(props: NavigationProps = {}) {
       case 'about':
         navigate('/about')
         break
+      case 'locales':
+        navigate('/examples/locales')
+        break
       default:
     }
   }
@@ -53,6 +56,9 @@ function Navigation(props: NavigationProps = {}) {
       </button>
       <button value='about' onClick={handleEvents}>
         about
+      </button>
+      <button value='locales' onClick={handleEvents}>
+        locales
       </button>
     </StyledNavigation>
   )

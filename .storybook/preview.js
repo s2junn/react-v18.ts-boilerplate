@@ -1,16 +1,23 @@
 import * as React from 'react'
 import { withRouter } from 'storybook-addon-react-router-v6'
+import { RecoilRoot, useRecoilValue } from 'recoil'
 
-import GlobalStyles from '@/assets/styles/global'
+import GlobalStyles from '@/assets/styles/base'
+import Themes from '@/assets/styles/themes'
+// import { themeValue } from '@/modules/theme'
+// const theme = Themes[useRecoilValue(themeValue)]
 
 export const decorators = [
   withRouter,
-  (Story) => (
-    <>
-      <GlobalStyles />
-      <Story />
-    </>
-  ),
+  (Story) => {
+    return (
+      <RecoilRoot>
+        {/* <GlobalStyles theme={Themes[theme]} /> */}
+        <GlobalStyles theme={Themes.light} />
+        <Story />
+      </RecoilRoot>
+    )
+  },
 ]
 
 export const parameters = {

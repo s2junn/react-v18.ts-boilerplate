@@ -1,37 +1,26 @@
-import React from 'react'
-import { useState } from 'react'
-import { useTranslation } from 'react-i18next'
+import * as React from 'react'
+import { useRecoilValue, useSetRecoilState } from 'recoil'
 import styled from '@emotion/styled'
 
 import { Button, SelectBox } from '@/components'
-
+import { themeState, themeValue, ThemeShapes } from '@/modules/theme'
+import Themes from '@/assets/styles/themes'
 import type { User } from '@/@types'
 
-const LanguageSelectBox = () => {
-  const languages = [
-    { label: '독일어', value: 'de' },
-    { label: 'English', value: 'en' },
-    { label: 'Français', value: 'fr' },
-    { label: '日本語', value: 'ja' },
-    { label: '한국어', value: 'ko' },
-  ]
+function ThemeSelectBox(): React.ReactElement {
+  const themes = Object.keys(Themes).map((theme) => ({ label: theme, value: theme }))
+  const theme = useRecoilValue<ThemeShapes>(themeState)
+  const setTheme = useSetRecoilState<ThemeShapes>(themeValue)
 
-  const [language, setLanguage] = useState('ko') // default language
-
-  const { t, i18n } = useTranslation()
-
-  const handleChangeLocale = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const lang = e.target.value
-
-    setLanguage(lang)
-
-    i18n.changeLanguage(lang)
+  const handleChangeTheme = (e: React.ChangeEvent<HTMLSelectElement>): void => {
+    const theme = e.target.value
+    setTheme(theme as ThemeShapes)
   }
 
   return (
     <div className='switcher'>
       <span>Languages: </span>
-      <SelectBox options={languages} default={'ko'} onChange={handleChangeLocale} />
+      <SelectBox options={themes} default={String(theme)} onChange={handleChangeTheme} />
     </div>
   )
 }
@@ -43,7 +32,7 @@ interface HeaderProps {
   onCreateAccount: () => void
 }
 
-function Header({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) {
+function Header({ user, onLogin, onLogout, onCreateAccount }: HeaderProps): React.ReactElement {
   return (
     <StyledHeader>
       <div className='wrapper'>
@@ -57,7 +46,7 @@ function Header({ user, onLogin, onLogout, onCreateAccount }: HeaderProps) {
           </svg>
           <h1>Acme</h1>
         </div>
-        <LanguageSelectBox />
+        <ThemeSelectBox />
         <div>
           {user ? (
             <>
