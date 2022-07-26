@@ -12,7 +12,6 @@ module.exports = {
   // 타입스크립트용으로는 아래와 같이 써야하지만, plugin:@typescript-eslint/recommended 내부에 포함되어있음
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    project: ['./tsconfig.json'],
     sourceType: 'module',
     ecmaFeatures: {
       jsx: true,
