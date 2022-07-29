@@ -12,10 +12,6 @@ on:
       - develop
       - feature/*
 
-  merge:
-    branches:
-      - develop
-
 jobs:
   continuous-integration:
     runs-on: ubuntu-latest
