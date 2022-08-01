@@ -1,11 +1,12 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { useTranslation } from 'react-i18next'
+import classNames from 'classnames'
 import styled from '@emotion/styled'
 
 import { Button, SelectBox } from '@/components'
 
-const LanguageSelectBox = () => {
+function LanguageSelectBox(): React.ReactElement {
   const languages = [
     { label: '독일어', value: 'de' },
     { label: 'English', value: 'en' },
@@ -18,7 +19,7 @@ const LanguageSelectBox = () => {
 
   const { t, i18n } = useTranslation()
 
-  const handleChangeLocale = (e: React.ChangeEvent<HTMLSelectElement>) => {
+  const handleChangeLocale = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     const lang = e.target.value
 
     setLanguage(lang)
@@ -29,7 +30,7 @@ const LanguageSelectBox = () => {
   return (
     <div className='switcher'>
       <span>Languages: </span>
-      <SelectBox options={languages} default={'ko'} onChange={handleChangeLocale} />
+      <SelectBox options={languages} default='ko' onChange={handleChangeLocale} />
     </div>
   )
 }
@@ -39,27 +40,27 @@ type LocalesProps = {
   className?: string
 }
 
-function Locales(props: LocalesProps = {}) {
+function Locales(props: LocalesProps = {}): React.ReactElement {
   const { t, i18n } = useTranslation()
   const [message, setMessage] = useState('Hello, Locales!')
   const [variable, setVariable] = useState('Test Variable')
 
   useEffect(() => {
-    //TODO: componentDidMount
+    // TODO: componentDidMount
     return () => {
-      //TODO: componentWillUnmount
+      // TODO: componentWillUnmount
     }
   }, [])
 
   useEffect(() => {
-    //TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나
+    // TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나
     return () => {
-      //TODO: componentWillUpdate
+      // TODO: componentWillUpdate
     }
   }, [variable])
 
   return (
-    <StyledLocales className={`locales ${props.className || ''}`}>
+    <StyledLocales className={classNames('locales', props.className)}>
       <LanguageSelectBox />
       {t('Welcome to React')}
       {props.children}

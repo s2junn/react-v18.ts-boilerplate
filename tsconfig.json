@@ -26,7 +26,7 @@
     "jsxImportSource": "@emotion/react",
     "sourceMap": true
   },
-  "typeRoots": ["node_modules/@types", "src/@types"],
+  "typeRoots": ["node_modules/@types", "src/types"],
   "exclude": ["node_modules"],
   "include": ["src", "stories"]
 }

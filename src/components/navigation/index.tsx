@@ -1,6 +1,7 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
+import classNames from 'classnames'
 import styled from '@emotion/styled'
 
 type NavigationProps = {
@@ -8,27 +9,27 @@ type NavigationProps = {
   className?: string
 }
 
-function Navigation(props: NavigationProps = {}) {
+function Navigation(props: NavigationProps = {}): React.ReactElement {
   const [message, setMessage] = useState('Hello, World!')
   const [variable, setVariable] = useState('Test Variable')
 
   useEffect(() => {
-    //TODO: componentDidMount
+    // TODO: componentDidMount
     return () => {
-      //TODO: componentWillUnmount
+      // TODO: componentWillUnmount
     }
   }, [])
 
   const navigate = useNavigate()
 
   useEffect(() => {
-    //TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나
+    // TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나
     return () => {
-      //TODO: componentWillUpdate
+      // TODO: componentWillUpdate
     }
   }, [variable])
 
-  function handleEvents(e: React.MouseEvent<HTMLButtonElement>) {
+  function handleEvents(e: React.MouseEvent<HTMLButtonElement>): void {
     switch ((e.target as HTMLButtonElement).value) {
       case 'root':
         navigate('/')
@@ -47,17 +48,17 @@ function Navigation(props: NavigationProps = {}) {
   }
 
   return (
-    <StyledNavigation className={['navigation', props.className || ''].join(' ')}>
-      <button value='root' onClick={handleEvents}>
+    <StyledNavigation className={classNames('navigation', props.className)}>
+      <button type='button' value='root' onClick={handleEvents}>
         root
       </button>
-      <button value='home' onClick={handleEvents}>
+      <button type='button' value='home' onClick={handleEvents}>
         home
       </button>
-      <button value='about' onClick={handleEvents}>
+      <button type='button' value='about' onClick={handleEvents}>
         about
       </button>
-      <button value='locales' onClick={handleEvents}>
+      <button type='button' value='locales' onClick={handleEvents}>
         locales
       </button>
     </StyledNavigation>

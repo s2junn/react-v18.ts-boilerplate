@@ -12,7 +12,8 @@ module.exports = {
   // 타입스크립트용으로는 아래와 같이 써야하지만, plugin:@typescript-eslint/recommended 내부에 포함되어있음
   parser: '@typescript-eslint/parser',
   parserOptions: {
-    sourceType: 'module',
+    // sourceType: 'module',
+    project: './tsconfig.json',
     ecmaFeatures: {
       jsx: true,
     },
@@ -108,7 +109,7 @@ module.exports = {
         ignoreTemplateLiterals: true,
       },
     ],
-    'eqeqeq': 'warn',
+    'eqeqeq': ['error', 'always', { null: 'ignore' }],
     '@typescript-eslint/no-empty-interface': 'warn',
     '@typescript-eslint/adjacent-overload-signatures': 'warn',
     '@typescript-eslint/no-dupe-class-members': 'warn',
@@ -124,6 +125,11 @@ module.exports = {
       {
         allowString: false,
         allowNumber: false,
+        allowNullableObject: false,
+        allowNullableBoolean: false,
+        allowNullableString: false,
+        allowNullableNumber: false,
+        allowAny: false,
       },
     ],
     '@typescript-eslint/explicit-function-return-type': [
@@ -150,7 +156,7 @@ module.exports = {
   overrides: [
     {
       files: ['**/__tests__/**/*.[jt]s?(x)', '**/?(*.)+(spec|test).[jt]s?(x)'],
-      excludedFiles: '제외할 파일 또는 파일패턴',
+      // excludedFiles: '제외할 파일 또는 파일패턴',
       extends: [
         // 'plugin:testing-library/react',
         // 'plugin:jest-dom/recommended',
@@ -160,6 +166,12 @@ module.exports = {
       files: ['**/*.stories.tsx'],
       rules: {
         'react/function-component-definition': 'off',
+      },
+    },
+    {
+      files: ['src/types/**/*.d.ts'],
+      rules: {
+        '@typescript-eslint/no-empty-interface': 'off',
       },
     },
   ],

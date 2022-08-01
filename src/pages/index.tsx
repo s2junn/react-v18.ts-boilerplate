@@ -2,13 +2,14 @@ import * as React from 'react'
 import { useState, useEffect, useMemo } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useTranslation } from 'react-i18next'
+import classNames from 'classnames'
 
 type RootProps = {
   children?: React.ReactNode
   className?: string
 }
 
-function Root(props: RootProps = {}) {
+function Root(props: RootProps = {}): React.ReactElement {
   const { t, i18n } = useTranslation()
 
   const [message, setMessage] = useState('Hello, Root!')
@@ -17,22 +18,22 @@ function Root(props: RootProps = {}) {
   const navigate = useNavigate()
 
   useEffect(() => {
-    //TODO: componentDidMount
+    // TODO: componentDidMount
     // navigate('/home')
     return () => {
-      //TODO: componentWillUnmount
+      // TODO: componentWillUnmount
     }
   }, [])
 
   useEffect(() => {
-    //TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나
+    // TODO: shouldComponent Update? componentDidUpdate? 둘 중에 하나
     return () => {
-      //TODO: componentWillUpdate
+      // TODO: componentWillUpdate
     }
   }, [variable])
 
   return (
-    <div className={`root-element ${props.className || ''}`}>
+    <div className={classNames('root-element', props.className)}>
       {message}
       <br />
       {t('Welcome to React')}

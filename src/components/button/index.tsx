@@ -1,5 +1,5 @@
 import React from 'react'
-
+import classNames from 'classnames'
 import styled from '@emotion/styled'
 
 export interface ButtonProps {
@@ -10,13 +10,19 @@ export interface ButtonProps {
   onClick?: () => void
 }
 
-function Button({ primary = false, size = 'medium', backgroundColor, label, ...props }: ButtonProps) {
+function Button({
+  primary = false,
+  size = 'medium',
+  backgroundColor,
+  label,
+  ...props
+}: ButtonProps): React.ReactElement {
   const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary'
 
   return (
     <StyledButton
       type='button'
-      className={['storybook-button', `storybook-button--${size}`, mode].join(' ')}
+      className={classNames('storybook-button', `storybook-button--${size}`, mode)}
       style={{ backgroundColor }}
       {...props}>
       {label}

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
+import classNames from 'classnames'
 
 import styled from '@emotion/styled'
 
@@ -31,7 +32,7 @@ function {{ properCase ComponentName }}(props: {{ properCase ComponentName }}Pro
     }
 
     return (
-        <Styled{{ properCase ComponentName }} className={['{{ dashCase ComponentName }}', props.className || ''].join(' ')}>
+        <Styled{{ properCase ComponentName }} className={classNames('{{ dashCase ComponentName }}', props.className)}>
             { message }<br />
             { props.children }
             <button onClick={ handleEvents }>button</button>

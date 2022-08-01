@@ -1,18 +1,19 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
 import { Outlet } from 'react-router-dom'
+import classNames from 'classnames'
 import styled from '@emotion/styled'
 
 import { Header, Navigation } from '@/components'
 
-import type { User } from '@/@types'
+import type { User } from '@/types'
 
 export type LayoutProps = {
   children?: React.ReactNode
   className?: string
 }
 
-function Layout(props: LayoutProps = {}) {
+function Layout(props: LayoutProps = {}): React.ReactElement {
   const [message, setMessage] = useState('[Layout]: Hello!')
   const [user, setUser] = useState<User>()
 
@@ -24,7 +25,7 @@ function Layout(props: LayoutProps = {}) {
   }, [])
 
   return (
-    <StyledLayout className={`layout ${Boolean(props.className) || ''}`}>
+    <StyledLayout className={classNames('layout', props.className)}>
       <Header
         user={user}
         onLogin={() => setUser({ name: 'Jane Doe' })}

@@ -5,7 +5,7 @@ import styled from '@emotion/styled'
 import { Button, SelectBox } from '@/components'
 import { themeState, themeValue, ThemeShapes } from '@/modules/theme'
 import Themes from '@/assets/styles/themes'
-import type { User } from '@/@types'
+import type { User } from '@/types'
 
 function ThemeSelectBox(): React.ReactElement {
   const themes = Object.keys(Themes).map((theme) => ({ label: theme, value: theme }))
@@ -48,7 +48,7 @@ function Header({ user, onLogin, onLogout, onCreateAccount }: HeaderProps): Reac
         </div>
         <ThemeSelectBox />
         <div>
-          {user ? (
+          {user != null ? (
             <>
               <span className='welcome'>
                 Welcome, <b>{user.name}</b>!

@@ -1,5 +1,6 @@
 import * as React from 'react'
 import { useState, useEffect } from 'react'
+import classNames from 'classnames'
 import styled from '@emotion/styled'
 
 export type Option = {
@@ -35,15 +36,15 @@ function SelectBox(props: SelectBoxProps = { options: [] }): React.ReactElement 
 
   const onSelectChanged = (e: React.ChangeEvent<HTMLSelectElement>): void => {
     // TODO: to do something
-    console.log(e.target.value)
-    if (props.onChange) {
+    // console.log(e.target.value)
+    if (props.onChange != null) {
       props.onChange(e)
     }
   }
 
   return (
     <StyledSelectBox
-      className={['select-box', Boolean(props.className) || ''].join(' ')}
+      className={classNames('select-box', props.className)}
       defaultValue={props.default}
       onChange={onSelectChanged}>
       {props.options.map((option) => (

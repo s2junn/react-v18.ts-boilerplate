@@ -9,7 +9,7 @@ type MetaProps = {
   url?: string
 }
 
-function Meta(props: MetaProps = {}) {
+function Meta(props: MetaProps = {}): React.ReactElement {
   return (
     <Helmet>
       <title>{props.title}</title>
